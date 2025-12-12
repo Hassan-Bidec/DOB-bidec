@@ -37,7 +37,7 @@ const Products = () => {
   }, []);
 
   const handleCategoryLink = (product) => {
-    // In Next.js, you navigate using router.push
+
     router.push(`/product-category/${product.slug}`);
   };
 
@@ -50,7 +50,7 @@ const Products = () => {
         >
 
 
-          Our One-Stop Shop for  Disposable Products
+          Our One-Stop Shop for Disposable Products
         </h3>
         <p
           data-aos="fade-left"
