@@ -1,7 +1,7 @@
 
 
 import React, { Suspense } from "react";
-import ErrorPage from "../app/src/Pages/ErrorPage"
+import ErrorPage from "./src/Pages/ErrorPage"
 
 // export const dynamic = "force-dynamic";
 export default function Page() {

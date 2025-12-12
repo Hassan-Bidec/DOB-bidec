@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import Customization from "../src/Pages/Customization";
 
 // 🟩 Dynamic Metadata Function for Customization Page
@@ -38,10 +39,8 @@ export async function generateMetadata() {
 // export const dynamic = "force-dynamic";
 export default function Page() {
   return (
-    // <Suspense fallback={<div>Loading...</div>}>
-      
-      // <Customization />
-<Customization/>
-    //  </Suspense>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Customization />
+    </Suspense>
   );
 }
