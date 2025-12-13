@@ -1,5 +1,5 @@
 
-i
+
 import Checkout from "../src/Pages/Checkout"
 
 // export const dynamic = "force-dynamic";
