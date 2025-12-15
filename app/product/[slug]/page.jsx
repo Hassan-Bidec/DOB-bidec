@@ -560,7 +560,7 @@ const inquiryMessage = encodeURIComponent(
                             ) : (
                                 <span>No variants available</span>
                             )} */}
-                            {selectedProductVariants[0]?.price} Rs
+                         Rs {selectedProductVariants[0]?.price} 
                         </p>
 
                         <form onSubmit={handleSubmit} className='max-w-130  w-full flex flex-col gap-5 '>

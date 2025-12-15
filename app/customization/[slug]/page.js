@@ -708,7 +708,7 @@ export default function CustomDetails() {
                 alt="bgGradient"
             /> */}
           {isCartModalOpen && (
-                       <div className="fixed inset-0 flex items-center justify-center  bg-opacity-50 z-50 text-black" onClick={() => setIsCartModalOpen(false)}>
+                       <div className="fixed inset-0 flex items-center justify-center z-50 text-black" onClick={() => setIsCartModalOpen(false)}>
                            <div className="fixed md:top-36 md:right-4 bg-white shadow-lg p-4 rounded-lg z-50 w-[300px] transition-transform duration-500">
                                <div className='flex justify-between  text-black'>
                                    <h4 className="text-md font-bold">Added to Cart</h4>

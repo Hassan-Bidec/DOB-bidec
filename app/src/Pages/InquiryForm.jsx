@@ -210,6 +210,14 @@ function InquiryForm() {
                             Please choose a product <span className="text-red-500">*</span>
                         </label>
 
+                           <div
+                                                    onClick={() => setIsDropdown(!isDropdown)}
+                                                    className="flex justify-between items-center p-2 rounded-md px-3 my-2 border border-white bg-transparent cursor-pointer"
+                                                >
+                                                    <p>{selectedProduct}</p>
+                                                    <PiCaretDownThin size={20} />
+                                                </div>
+{/* 
                         <div
                             ref={productRef}
                             onClick={() => setIsDropdown(!isDropdown)}
@@ -217,10 +225,10 @@ function InquiryForm() {
                         >
                             <p>{selectedProduct}</p>
                             <PiCaretDownThin size={20} />
-                        </div>
+                        </div> */}
 
                         {isDropdown && (
-                            <div className="absolute z-10 w-full md:w-80 rounded-lg mt-1 h-96 bg-white overflow-y-auto">
+                            <div className="absolute z-10 w-full md:w-80 rounded-lg mt-19 h-96 bg-white overflow-y-auto">
                                 {productCategory.map((product, index) => (
                                     <h4
                                         key={index}
