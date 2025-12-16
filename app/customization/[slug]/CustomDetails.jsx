@@ -1,10 +1,8 @@
+"use client";
+import dynamic from 'next/dynamic';
 
-import CustomDetails from "./page";
+const CustomDetails = dynamic(() => import('./page'), { ssr: false });
 
 export default function CustomDetailsWrapper(props) {
-  return (
-    // <Suspense fallback={<div className="p-10 text-white">Loading...</div>}>
-      <CustomDetails {...props} />
-    // </Suspense>
-  );
+  return <CustomDetails {...props} />;
 }
