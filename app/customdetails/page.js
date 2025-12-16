@@ -30,10 +30,13 @@ export async function generateMetadata() {
 // 🟩 Load InquiryForm Component
 
 import { Suspense } from "react";
-import dynamic from "next/dynamic";
+
 import CustomDetailsPage from "../src/Pages/CustomDetails";
-export const dynamic = "force-dynamic";
-const CustomDetails = dynamic(() => import('../src/Pages/CustomDetails'), {ssr: false});
+import dynamic from "next/dynamic";
+const CustomDetails = dynamic(
+  () => import("../src/Pages/CustomDetails"),
+  { ssr: false }
+);
 export default function Page() {
   return (
     <>
