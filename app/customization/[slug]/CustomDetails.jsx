@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense } from "react";
-import CustomDetails from "./page";
+import CustomDetails from "../../src/Pages/CustomDetails";
 
 
 export const dynamic = 'force-dynamic';
