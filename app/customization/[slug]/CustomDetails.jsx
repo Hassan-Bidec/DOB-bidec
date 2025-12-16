@@ -1,8 +1,14 @@
 "use client";
-import dynamic from 'next/dynamic';
 
-const CustomDetails = dynamic(() => import('./page'), { ssr: false });
+import { Suspense } from "react";
+import CustomDetails from "./page";
 
+
+export const dynamic = 'force-dynamic';
 export default function CustomDetailsWrapper(props) {
-  return <CustomDetails {...props} />;
+  return (
+    <Suspense fallback={<div className="p-10 text-white">Loading...</div>}>
+      <CustomDetails {...props} />
+    </Suspense>
+  );
 }
