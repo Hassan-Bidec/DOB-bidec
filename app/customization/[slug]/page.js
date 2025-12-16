@@ -63,7 +63,7 @@ export default function CustomDetails() {
 
   const { addToWishlist } = useWishlist(); 
   const { addToCart } = useCart();
-  const { user } = useUser();
+  const { user } = useUser() || {};
   const router = useRouter();
   const pathname = usePathname();
 
