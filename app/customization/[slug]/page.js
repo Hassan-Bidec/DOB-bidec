@@ -289,14 +289,14 @@ export default function CustomDetails() {
         <div className="relative py-32 px-10 text-white overflow-hidden">
             <ToastContainer autoClose={500} />
             <CustomDetailSeo
-                title={productDetail?.seoMetadata?.meta_title}
-                des={productDetail?.seoMetadata?.meta_description}
-                focuskey={productDetail?.seoMetadata?.focus_keyword}
-                canonicalUrl={productDetail?.seoMetadata?.canonical_url}
-                schema={productDetail?.seoMetadata?.schema}
-                og_title={productDetail?.product?.name}
-                og_des={productDetail?.product?.description}
-                og_img={productDetail?.product?.product_image[0]?.image}
+                title={productDetail?.seoMetadata?.meta_title || ""}
+                des={productDetail?.seoMetadata?.meta_description || ""}
+                focuskey={productDetail?.seoMetadata?.focus_keyword || ""}
+                canonicalUrl={productDetail?.seoMetadata?.canonical_url || ""}
+                schema={productDetail?.seoMetadata?.schema || ""}
+                og_title={productDetail?.product?.name || ""}
+                og_des={productDetail?.product?.description || ""}
+                og_img={productDetail?.product?.product_image[0]?.image || ""}
             />
             {/* Breadcrumb and Title */}
             <div className="flex flex-col py-5">
@@ -345,7 +345,7 @@ export default function CustomDetails() {
                             {selectedImage && (
                                 <img
                                     className="w-full h-full object-cover rounded-lg"
-                                    src={`${Assets_Url}${selectedImage}`} // Show selected image
+                                    src={`${Assets_Url}${selectedImage}`} 
                                     alt={productImages[0]?.image_alt || 'Product Image'}
                                 />
                             )}

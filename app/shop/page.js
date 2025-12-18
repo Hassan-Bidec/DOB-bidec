@@ -32,14 +32,14 @@ export async function generateMetadata() {
 
 
 
+import { Suspense } from 'react';
 import Shop from "../src/Pages/Shop";
 
 // export const dynamic = "force-dynamic";
 export default function Page() {
   return (
-    // <Suspense fallback={<div>Loading...</div>}>
-
-    <Shop />
-    //  </Suspense>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Shop />
+    </Suspense>
   );
 }
