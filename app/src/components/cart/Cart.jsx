@@ -22,7 +22,8 @@ function Cart() {
             return sum + (Number(item.product_total) || 0);
         }, 0);
         setSubtotal(total);
-        console.log("cartItemscartItems" , cartItems)
+        console.log("🟢 cartItems UPDATED:", cartItems);
+        
     }, [cartItems]);
 
     const deliveryCharges = 0;

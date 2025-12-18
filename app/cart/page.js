@@ -6,6 +6,7 @@ export async function generateMetadata() {
   );
 
   const data = await res.json();
+  console.log("datadatadata", data);
 
   return {
     title: data?.data?.meta_title || "Your Cart",

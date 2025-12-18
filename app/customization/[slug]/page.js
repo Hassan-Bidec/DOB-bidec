@@ -63,7 +63,7 @@ export default function CustomDetails() {
 
   const { addToWishlist } = useWishlist(); 
   const { addToCart } = useCart();
-  const { user } = useUser() || {};
+  const { user } = useUser();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -100,6 +100,8 @@ export default function CustomDetails() {
         setProductLid(resData.product?.product_lid_options);
         setRecomendedProducts(resData.recommended_products);
         setSelectedImage(resData?.product.product_image[0].image || '');
+
+        console.log("selectedPackSize" , selectedPackSize)
       } catch (error) {
         console.log(error);
       }
@@ -119,6 +121,7 @@ export default function CustomDetails() {
       const wishlistResponse = await axios.protected.get(`/user/wishlist/${id}/check`);
       if (wishlistResponse.data.exists) {
         toast.error('Product already added to wishlist');
+        console.log("wishlistResponse" , wishlistResponse)
       } else {
         const response = await axios.protected.post(`/user/wishlist/${id}/add`);
         if (response.status === 200) {
@@ -275,6 +278,8 @@ export default function CustomDetails() {
         }
 
         document.addEventListener("mousedown", handleClickOutside);
+        console.log("selectedProductVariants" , selectedProductVariants);
+        
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
@@ -494,7 +499,7 @@ export default function CustomDetails() {
                                                     onClick={() => {
                                                         setSelectedPackSize(variant.pack_size); // Set selected pack size
                                                         setSelectedPackPrice(variant.price_per_piece)
-                                                        console.log(selectedPackPrice);
+                                                        console.log("selectedPackPrice" , selectedPackPrice);
 
                                                         setPiecesDropdown(false); // Close dropdown after selection
                                                     }}>
@@ -606,7 +611,7 @@ export default function CustomDetails() {
                         </div>
 
                         <div className="flex flex-row md:gap-5 gap-2">
-                            <button className='p-2 pt-3 border-b-4 border-[#1E7773] w-32 lg:text-[15px] font-bazaar cursor-pointer text-xs' onClick={() => handleWishlist(productVariants[0].product?.id)}>ADD TO WISHLIST</button>
+                            <button className='p-2 pt-3 border-b-4 border-[#1E7773] w-32 lg:text-[15px] font-bazaar cursor-pointer text-xs' onClick={() => handleWishlist(productDetail.product?.id)}>ADD TO WISHLIST</button>
                             <button className='p-3 border flex flex-row justify-between items-center gap-2  border-[#1E7773] w32 lg:text-[15px]  font-bazaar text-xs rounded-md' onClick={() => window.open(`https://wa.me/${whatsappNumber}?text=${inquiryMessage}`, '_blank')}><FaWhatsapp className='text-[#1E7773] text-2xl' /> <p className="pt-2 cursor-pointer">ORDER ON WHATSAPP</p></button>
                         </div>
                         {/* <button className='p-3 pt-3 bg-[#1E7773] w-52 lg:text-[15px] font-bazaar text-xs rounded-md'>CUSTOMIZED PRINTING</button> */}
@@ -730,4 +735,3 @@ export default function CustomDetails() {
         </div>
     )
 }
-
